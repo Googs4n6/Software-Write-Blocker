@@ -1,5 +1,5 @@
 # Software-Write-Blocker
-A GUI-based Software Write-Blocker built for Powershell.
+A GUI-based Software Write-Blocker built in Powershell.
 
 Uses modifications of registry keys to enable or disable "read-only" on removable drives.
 
