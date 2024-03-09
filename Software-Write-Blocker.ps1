@@ -121,13 +121,6 @@ function EnableBlock {
 
 Function MainForm {
 
-    $prgBar = New-Object System.Windows.Forms.ProgressBar
-    $prgBar.Location = New-Object System.Drawing.Size(-1,0)
-    $prgBar.Size = New-Object System.Drawing.Size(897,4)
-    $prgBar.Style = [System.Windows.Forms.ProgressBarStyle]::Marquee
-    $prgBar.MarqueeAnimationSpeed = 24
-    $prgBar.Visible = $false
-
     $frmMain = New-Object System.Windows.Forms.Form
     $frmMain.MinimumSize = $frmMain.MaximumSize = New-Object System.Drawing.Size(500,350)
     $frmMain.MinimizeBox = $frmMain.MaximizeBox = $false
@@ -180,7 +173,7 @@ Function MainForm {
         $disabling.Visible = $false
     })
 
-    $frmMain.Controls.AddRange(@($lblTitle,$prgBar))
+    $frmMain.Controls.AddRange(@($lblTitle))
 
     $frmMain.Controls.AddRange(@($WriteBlockON,$WriteBlockOFF))
     $frmMain.Controls.AddRange(@($enabling,$enabled,$disabling,$disabled))
