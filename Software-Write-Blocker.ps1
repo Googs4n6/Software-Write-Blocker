@@ -1,14 +1,6 @@
 ﻿$ScriptName = "Software Write-Blocker"
 
-$showWindowAsync = Add-Type –memberDefinition @”
-[DllImport("user32.dll")]
-public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
-“@ -name “Win32ShowWindowAsync” -namespace Win32Functions –passThru
-
-Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.Application]::EnableVisualStyles()
-
-function Hide-PowerShell() { 
+Function Hide-PowerShell() { 
     [void]$showWindowAsync::ShowWindowAsync((Get-Process –id $pid).MainWindowHandle, 2) 
 }
 
